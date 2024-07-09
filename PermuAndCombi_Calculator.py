@@ -160,12 +160,7 @@ def calculator_base():
     
     #main calculator-menu:         
     def calculator_menu():
-        Logo = "[Permutation \\\ Combination Calculator]\n\n" #Logo.
-        
-        for t in Logo:
-            print(t, end="", flush=True)
-            time.sleep(0.05)
-        
+        print("[Permutation \\\ Combination Calculator]\n\n")#Logo.
         print(f"Permutation Formula = {p}\nCombination Formula = {c}\n\n") #Formulas.               
         calculator_options = {1:'Permutation',
                               2:'Combination',
@@ -194,6 +189,7 @@ def calculator_base():
                 
             else:
                 os.system('clear')
+                time.sleep(0.07)
                 return calculator_menu()
         
     calculator_menu()
