@@ -21,10 +21,11 @@ def factorial(a):
 
 def permutation(a, b):
     try:
-        if a and b <= 2:
+        if a and b <= 0:
             return a and b
         else:
-            return factorial(a) / factorial(a-b)
+            sub = a-b
+            return factorial(a) / factorial(sub)
     except ZeroDivisionError as e:
         return 0
     except OverflowError:
@@ -204,4 +205,4 @@ def calculator_base():
         
     calculator_menu()
    
-calculator_base()calculator_base()
+calculator_base()
