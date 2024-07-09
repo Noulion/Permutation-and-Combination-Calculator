@@ -189,12 +189,12 @@ def calculator_base():
                 return calculator_permu()
                 break
                 
-            if calc_input == '2':
+            elif calc_input == '2':
                 os.system('clear')
                 return calculator_combi()
                 break
             
-            if calc_input == '3':
+            elif calc_input == '3':
                 print("\nExited with 0..")
                 break
                 
