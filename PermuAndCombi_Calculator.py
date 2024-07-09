@@ -2,8 +2,6 @@
 import time
 import os
 
-
-
 p = "P(n,r) = n!/(n-r)!"
 c = "C(n, r) = n!/(n−r)!r!"
 
@@ -52,9 +50,7 @@ def calculator_base():
         
         #if value of a, b are filled then this function is called.
         def combi_solve(a, b):
-            print(c)
-            print(" \nFormula is ready\n")
-            print(f"C({a}, {b}) = {a}!/({a}−{b})!{b}", end=" ")
+            print(f"{c} \n\nFormula is ready\n\nC({a}, {b}) = {a}!/({a}−{b})!{b} ", end="")
             
             while True:
                  start_solve = input("[Press enter to solve]\r")
@@ -64,10 +60,8 @@ def calculator_base():
                      os.system('clear')
                      ans = combination(a, b)
                      
-                     print(c)
-                     print(f"\nSolved!\n")
-                     print(f"C({a}, {b}) = {a}!/({a}−{b})!{b}\n= C({ans})\n")
-                     print("\n\nreturning..")
+                     print(f"{c}\n\nSolved!\n\nC({a}, {b}) = {a}!/({a}−{b})!{b}\n= C({ans})\n")
+                     print("\nreturning..")
                      time.sleep(2.7)
                      os.system('clear')
                      return calculator_base()
@@ -92,8 +86,7 @@ def calculator_base():
             except ValueError:
                 print("Numbers Only")
         # (r) value input:
-        print(c)
-        print("\nput a value for 'r'\n")
+        print(f"{c}\n\nput a value for 'r'\n")
         while b <= 0:
             try:
                 b_in = int(input(f"C({a}, {b}) = {a}!/({a}−{b})!{b}!: "))
@@ -113,9 +106,7 @@ def calculator_base():
          
          #if value a,b are filled then this function is called.
          def permu_solve(a, b):
-             print(p)
-             print(" \nFormula is ready\n")
-             print(f"P({a},{b}) = {a}!/({a}-{b})!", end=" ") #New filled formula.
+             print(f"{p}\n \nFormula is ready\n\nP({a},{b}) = {a}!/({a}-{b})! ", end="")#New filled formula.
              
              #Asks user if he wants to solve the filled formula.
              while True:
@@ -126,9 +117,7 @@ def calculator_base():
                      os.system('clear')
                      ans = permutation(a, b)
                      
-                     print(p)
-                     print(f"\nSolved!\n")
-                     print(f"P({a},{b}) = {a}!/({a}-{b})! \n= P({ans})\n")
+                     print(f"{p}\n\nSolved!\n\nP({a},{b}) = {a}!/({a}-{b})! \n= P({ans})\n")
                      print("\n\nreturning..")
                      time.sleep(2.7)
                      os.system('clear')
@@ -155,8 +144,7 @@ def calculator_base():
                  print("Numbers Only...")
                  
          # (r) value input:
-         print(p)
-         print(" \nput a value for 'r'\n")  
+         print(f"{p}\n \nput a value for 'r'\n")  
          while b >= 0:
              try:
                  b_in = int(input(f"P({a},{b}) = {a}!/({a}-{b})!: "))
@@ -172,7 +160,12 @@ def calculator_base():
     
     #main calculator-menu:         
     def calculator_menu():
-        print("[Permutation \\ Combination Calculator]\n") #Logo.
+        Logo = "[Permutation \\\ Combination Calculator]\n\n" #Logo.
+        
+        for t in Logo:
+            print(t, end="", flush=True)
+            time.sleep(0.05)
+        
         print(f"Permutation Formula = {p}\nCombination Formula = {c}\n\n") #Formulas.               
         calculator_options = {1:'Permutation',
                               2:'Combination',
@@ -180,7 +173,7 @@ def calculator_base():
         }
         
         for num,option in calculator_options.items():
-            print(f' ({num}) -▷ {option}')
+            print(f' ({num}) : [{option}]')
         
         while True:
             calc_input = input("\n; ")
