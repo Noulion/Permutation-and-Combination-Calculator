@@ -36,7 +36,7 @@ def combination(n, r):
         else:
             return factorial(n) / (factorial(n-r))/(factorial(r))
     except ZeroDivisionError:
-        os.system('clear')
+        os.system('cls')
         return 0 
         
 #All of the visuals are here:
@@ -57,20 +57,20 @@ def calculator_base():
                  
                  #Only start if a space or enter is entered.
                  if start_solve == '':
-                     os.system('clear')
+                     os.system('cls')
                      ans = combination(a, b)
                      
                      print(f"{c}\n\nSolved!\n\nC({a}, {b}) = {a}!/({a}−{b})!{b}\n= C({ans})\n")
                      print("\nreturning..")
                      time.sleep(2.7)
-                     os.system('clear')
+                     os.system('cls')
                      return calculator_base()
                      break
                  
                  #else, just return to solving menu.
                  else:
                      print('\njust click enter..')
-                     os.system('clear')
+                     os.system('cls')
                      return combi_solve(a, b)
         
         # (n) value input:
@@ -81,7 +81,7 @@ def calculator_base():
                 
                 if a_in == a_in:
                     a+=a_in
-                    os.system('clear')
+                    os.system('cls')
                     break
             except ValueError:
                 print("Numbers Only")
@@ -93,7 +93,7 @@ def calculator_base():
                 
                 if b_in == b_in:
                     b+=b_in
-                    os.system('clear')
+                    os.system('cls')
                     return combi_solve(a, b)
                     break
             except ValueError:
@@ -114,20 +114,20 @@ def calculator_base():
                  
                  #Only start if a space or enter is entered.
                  if start_solve == '':
-                     os.system('clear')
+                     os.system('cls')
                      ans = permutation(a, b)
                      
                      print(f"{p}\n\nSolved!\n\nP({a},{b}) = {a}!/({a}-{b})! \n= P({ans})\n")
                      print("\n\nreturning..")
                      time.sleep(2.7)
-                     os.system('clear')
+                     os.system('cls')
                      return calculator_base()
                      break
                  
                  #else, just return to solving menu.
                  else:
                      print('\njust click enter..')
-                     os.system('clear')
+                     os.system('cls')
                      return permu_solve(a, b)
          
          # (n) value input:
@@ -138,7 +138,7 @@ def calculator_base():
                  
                  if a_in == a_in:
                      a+=a_in
-                     os.system('clear')
+                     os.system('cls')
                      break
              except ValueError:
                  print("Numbers Only...")
@@ -151,7 +151,7 @@ def calculator_base():
                  
                  if b_in == b_in:
                      b+=b_in
-                     os.system('clear')
+                     os.system('cls')
                      return permu_solve(a, b)
                      break
                      
@@ -160,7 +160,7 @@ def calculator_base():
     
     #main calculator-menu:         
     def calculator_menu():
-        print("[Permutation \\\ Combination Calculator]\n\n")#Logo.
+        print("[Permutation \\\ Combination Calculator]\n")#Logo.
         print(f"Permutation Formula = {p}\nCombination Formula = {c}\n\n") #Formulas.               
         calculator_options = {1:'Permutation',
                               2:'Combination',
@@ -174,12 +174,12 @@ def calculator_base():
             calc_input = input("\n; ")
             
             if calc_input == '1':
-                os.system('clear')
+                os.system('cls')
                 return calculator_permu()
                 break
                 
             elif calc_input == '2':
-                os.system('clear')
+                os.system('cls')
                 return calculator_combi()
                 break
             
@@ -188,8 +188,7 @@ def calculator_base():
                 break
                 
             else:
-                os.system('clear')
-                time.sleep(0.07)
+                os.system('cls')
                 return calculator_menu()
         
     calculator_menu()
